@@ -101,6 +101,7 @@ typedef atomic_uint_fast64_t atomic_iperf_size_t;
 #define OPT_JSON_STREAM 28
 #define OPT_SND_TIMEOUT 29
 #define OPT_USE_PKCS1_PADDING 30
+#define OPT_SOCK_PRIO 31
 
 /* states */
 #define TEST_START 1
@@ -420,6 +421,7 @@ enum {
     IESNDTIMEOUT = 33,      // Illegal message send timeout
     IEUDPFILETRANSFER = 34, // Cannot transfer file using UDP
     IESERVERAUTHUSERS = 35,   // Cannot access authorized users file
+    IEBADSOPRIO = 36,       // Bad socket priority value
     /* Test errors */
     IENEWTEST = 100,        // Unable to create a new test (check perror)
     IEINITTEST = 101,       // Test initialization failed (check perror)
@@ -476,6 +478,7 @@ enum {
     IEPTHREADATTRINIT=153,      // Unable to initialize thread attribute (check perror)
     IEPTHREADATTRDESTROY=154,      // Unable to destroy thread attribute (check perror)
     IEPTHREADSIGMASK=155,      // Unable to initialize sub thread signal mask (check perror)
+    IESETSOPRIO = 156,      // Unable to set socket priority (check perror)
     /* Stream errors */
     IECREATESTREAM = 200,   // Unable to create a new stream (check herror/perror)
     IEINITSTREAM = 201,     // Unable to initialize stream (check herror/perror)
